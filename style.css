@@ -1,0 +1,389 @@
+/* CSS Variables for colors */
+:root {
+    --primary-blue: #4A90E2;
+    --pure-white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --dark-text: #333333;
+    --error-red: #E74C3C;
+    --success-green: #2ECC71;
+    --medium-gray: #BDC3C7;
+}
+
+html[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Recommended font */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-blue), #50E3C2); /* Updated gradient as suggested */
+    color: var(--dark-text);
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-card {
+    background-color: var(--pure-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-card.hidden {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-blue);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 13px 15px; /* Changed from 12px to 13px */
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    padding-right: 40px;
+    background: var(--pure-white);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+}
+
+/* Password toggle styles */
+.password-group {
+    position: relative;
+}
+
+.password-group input {
+    padding-right: 70px; /* Make space for both toggle and status icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 40px;
+    top: calc(50% + 14px); /* Adjust based on label height and padding */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6B7280; /* Grey icon */
+    z-index: 10; /* Ensure it's above the input */
+}
+
+.toggle-password:hover {
+    color: #1E293B;
+}
+
+.toggle-password .fa-eye,
+.toggle-password .fa-eye-slash {
+    font-size: 18px;
+}
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--primary-blue);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--primary-blue), #50E3C2); /* Updated gradient */
+    color: var(--pure-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+    background: var(--medium-gray);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.switch-form-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+.switch-form-text a {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-form-text a:hover {
+    text-decoration: underline;
+}
+
+.validation-message {
+    font-size: 13px;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+.validation-message.error {
+    color: #DC2626; /* Red for errors */
+}
+
+.validation-message.success {
+    color: #16A34A; /* Green for success */
+}
+
+.input-group input.invalid {
+    border-color: #DC2626;
+}
+
+.input-group input.valid {
+    border-color: #16A34A;
+}
+
+/* Status icon styles */
+.status-icon {
+    position: absolute;
+    right: 15px;
+    top: calc(50% + 14px); /* Adjust based on label height and padding */
+    transform: translateY(-50%);
+    font-size: 18px;
+    display: none; /* Hidden by default */
+}
+
+.status-icon .fa-check-circle {
+    color: #16A34A; /* Green for valid */
+}
+
+.status-icon .fa-times-circle {
+    color: #DC2626; /* Red for invalid */
+}
+
+/* Spinner styles */
+.spinner {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.spinner.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-card {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+/* Language Switcher Styles */
+#language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--pure-white);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.lang-options {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--pure-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    overflow: hidden;
+}
+
+.lang-options.show {
+    display: block;
+}
+
+.lang-options div {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--dark-text);
+    transition: background-color 0.2s ease;
+}
+
+.lang-options div:hover {
+    background: var(--primary-blue);
+    color: var(--pure-white);
+}
+
+#language-switcher:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#language-switcher .fas.fa-globe {
+    font-size: 20px;
+    color: var(--primary-blue);
+}
+
+
+
+/* RTL specific styles */
+html[lang="ar"] .input-group label {
+    text-align: right;
+}
+
+html[lang="ar"] .input-group input {
+    padding-left: 40px; /* Adjust for status icon on the left */
+    padding-right: 15px;
+}
+
+html[lang="ar"] .password-group input {
+    padding-left: 70px; /* Adjust for toggle and status icon on the left */
+    padding-right: 15px;
+}
+
+html[lang="ar"] .status-icon {
+    right: auto;
+    left: 15px;
+}
+
+html[lang="ar"] .toggle-password {
+    right: auto;
+    left: 40px;
+}
+
+html[lang="ar"] input, html[lang="ar"] textarea {
+    text-align: right;
+}
+
+html[lang="ar"] #language-switcher {
+    right: auto;
+    left: 20px;
+}
+
+html[lang="ar"] .lang-options {
+    right: auto;
+    left: 0;
+}
+
+
+
+html[lang="ar"] .checkbox-group input[type="checkbox"] {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+html[lang="ar"] .spinner {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--success-green);
+    color: var(--pure-white);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none; /* Hidden by default */
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.error {
+    background-color: var(--error-red);
+}
+
+html[lang="ar"] .notification {
+    right: auto;
+    left: 20px;
+}

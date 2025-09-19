@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="notification" class="notification" aria-live="assertive"></div>
+    <div id="language-switcher">
+        <i class="fas fa-globe"></i>
+        <div class="lang-options">
+            <div data-lang="en">English</div>
+            <div data-lang="ar">العربية</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-card" id="login-card">
+            <h2 data-en="Login" data-ar="تسجيل الدخول">Login</h2>
+            <form id="login-form" aria-label="Login Form">
+                <div class="input-group">
+                    <label for="login-email" data-en="Email / Username" data-ar="البريد الإلكتروني / اسم المستخدم">Email / Username</label>
+                    <input type="text" id="login-email" placeholder="Enter your email or username" data-en-placeholder="Enter your email or username" data-ar-placeholder="أدخل بريدك الإلكتروني أو اسم المستخدم" aria-describedby="login-email-error">
+                    <span class="status-icon"><i class=""></i></span>
+                    <div class="validation-message error" id="login-email-error" aria-live="polite"></div>
+                </div>
+                <div class="input-group password-group">
+                    <label for="login-password" data-en="Password" data-ar="كلمة المرور">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" data-en-placeholder="Enter your password" data-ar-placeholder="أدخل كلمة المرور" aria-describedby="login-password-error">
+                    <span class="toggle-password" data-target="login-password" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></span>
+                    <span class="status-icon"><i class=""></i></span>
+                    <div class="validation-message error" id="login-password-error" aria-live="polite"></div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me" data-en="Remember me" data-ar="تذكرني">Remember me</label>
+                </div>
+                <button type="submit" id="login-button">
+                    <span data-en="Login" data-ar="تسجيل الدخول">Login</span>
+                    <span class="spinner hidden" role="status" aria-label="Loading"><i class="fas fa-spinner fa-spin"></i></span>
+                </button>
+                <a href="#" class="forgot-password" data-en="Forgot password?" data-ar="هل نسيت كلمة المرور؟">Forgot password?</a>
+            </form>
+            <p class="switch-form-text">
+                <span data-en="Don't have an account?" data-ar="ليس لديك حساب؟">Don't have an account?</span>
+                <a href="#" id="show-signup" data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</a>
+            </p>
+        </div>
+
+        <div class="form-card hidden" id="signup-card">
+            <h2 data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</h2>
+            <form id="signup-form" aria-label="Sign Up Form">
+                <div class="input-group">
+                    <label for="signup-fullname" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                    <input type="text" id="signup-fullname" placeholder="Enter your full name" data-en-placeholder="Enter your full name" data-ar-placeholder="أدخل اسمك الكامل" aria-describedby="signup-fullname-error">
+                    <span class="status-icon"><i class=""></i></span>
+                    <div class="validation-message error" id="signup-fullname-error" aria-live="polite"></div>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" data-en-placeholder="Enter your email" data-ar-placeholder="أدخل بريدك الإلكتروني" aria-describedby="signup-email-error">
+                    <span class="status-icon"><i class=""></i></span>
+                    <div class="validation-message error" id="signup-email-error" aria-live="polite"></div>
+                </div>
+                <div class="input-group password-group">
+                    <label for="signup-password" data-en="Password" data-ar="كلمة المرور">Password</label>
+                    <input type="password" id="signup-password" placeholder="Enter your password" data-en-placeholder="Enter your password" data-ar-placeholder="أدخل كلمة المرور" aria-describedby="signup-password-error">
+                    <span class="toggle-password" data-target="signup-password" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></span>
+                    <span class="status-icon"><i class=""></i></span>
+                    <div class="validation-message error" id="signup-password-error" aria-live="polite"></div>
+                </div>
+                <div class="input-group password-group">
+                    <label for="signup-confirm-password" data-en="Confirm Password" data-ar="تأكيد كلمة المرور">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm your password" data-en-placeholder="Confirm your password" data-ar-placeholder="تأكيد كلمة المرور" aria-describedby="signup-confirm-password-error">
+                    <span class="toggle-password" data-target="signup-confirm-password" aria-label="Toggle confirm password visibility"><i class="fas fa-eye"></i></span>
+                    <span class="status-icon"><i class=""></i></span>
+                    <div class="validation-message error" id="signup-confirm-password-error" aria-live="polite"></div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms-conditions" aria-describedby="terms-conditions-error">
+                    <label for="terms-conditions" data-en="I agree to the terms and conditions" data-ar="أوافق على الشروط والأحكام">I agree to the terms and conditions</label>
+                    <div class="validation-message error" id="terms-conditions-error" aria-live="polite"></div>
+                </div>
+                <button type="submit" id="signup-button">
+                    <span data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</span>
+                    <span class="spinner hidden" role="status" aria-label="Loading"><i class="fas fa-spinner fa-spin"></i></span>
+                </button>
+            </form>
+            <p class="switch-form-text">
+                <span data-en="Already have an account?" data-ar="هل لديك حساب بالفعل؟">Already have an account?</span>
+                <a href="#" id="show-login" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
